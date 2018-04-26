@@ -45,3 +45,7 @@ dist/
 coverage.txt
 coverage.xml
 coverage.html
+
+# habitat artifacts
+habitat/results/*
+results/*
