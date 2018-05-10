@@ -31,6 +31,5 @@ do_install() {
   cp -pr $HAB_CACHE_SRC_PATH/etc     $pkg_prefix/etc
   mkdir                              $pkg_prefix/plugins
   cp -pr /src/plugins/*              $pkg_prefix/plugins
-  chmod  +x                          $pkg_prefix/plugins/*
   return $?
 }

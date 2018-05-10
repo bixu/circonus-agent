@@ -49,3 +49,4 @@ coverage.html
 # habitat artifacts
 habitat/results/*
 results/*
+studio.toml
