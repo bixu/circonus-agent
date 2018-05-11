@@ -15,7 +15,7 @@ pkg_deps=(
 )
 pkg_build_deps=()
 pkg_bin_dirs=(bin)
-pkg_svc_user="hab"
+pkg_svc_user="root"
 
 do_setup_environment() {
   set_runtime_env SSL_CERT_DIR $(pkg_path_for core/cacerts)/ssl/certs/
@@ -29,7 +29,6 @@ do_build() {
 do_install() {
   cp -pr $HAB_CACHE_SRC_PATH/sbin/*  $pkg_prefix/bin
   cp -pr $HAB_CACHE_SRC_PATH/etc     $pkg_prefix/etc
-  mkdir                              $pkg_prefix/plugins
-  cp -pr /src/plugins/*              $pkg_prefix/plugins
+  cp -pr $HAB_CACHE_SRC_PATH/plugins $pkg_prefix/plugins
   return $?
 }
