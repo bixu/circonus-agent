@@ -10,7 +10,7 @@ HOME="{{pkg.svc_var_path}}"
 
 if [ "$(whoami)" = "root" ]
 then
-  exec chpst -U hab -u hab circonus-agentd --config {{pkg.svc_config_path}}/agent.json
+  exec chpst -U hab -u hab {{pkg.name}} --config {{pkg.svc_config_path}}/agent.json
 else
-  exec circonus-agentd --config {{pkg.svc_config_path}}/agent.json
+  exec {{pkg.name}} --config {{pkg.svc_config_path}}/agent.json
 fi
